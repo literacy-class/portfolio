@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="3人のクリエイターによるポートフォリオサイト - ウェブ開発、デザイン、マーケティングの専門家集団">
+    <meta name="keywords" content="ウェブ開発, デザイン, マーケティング, ポートフォリオ, クリエイター">
+    <title>Creative Trio | 3人のクリエイターポートフォリオ</title>
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" as="style">
+    <link rel="preload" href="./css/variables.css" as="style">
+    <link rel="preload" href="./js/utils.js" as="script">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/animations.css">
+    
+    <!-- Theme support -->
+    <script>
+        // Prevent flash of wrong theme
+        (function() {
+            const theme = localStorage.getItem('portfolio-theme') || 'light';
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header" data-animation="slideInDown">
+        <nav class="nav container">
+            <a href="#" class="nav__logo">
+                <i class="fas fa-code"></i>
+                Creative Trio
+            </a>
+
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="#home" class="nav__link active-link">
+                            <i class="fas fa-home nav__icon"></i>
+                            <span>ホーム</span>
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#about" class="nav__link">
+                            <i class="fas fa-user nav__icon"></i>
+                            <span>チームについて</span>
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#team" class="nav__link">
+                            <i class="fas fa-users nav__icon"></i>
+                            <span>メンバー</span>
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#services" class="nav__link">
+                            <i class="fas fa-briefcase nav__icon"></i>
+                            <span>サービス</span>
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#contact" class="nav__link">
+                            <i class="fas fa-paper-plane nav__icon"></i>
+                            <span>お問い合わせ</span>
+                        </a>
+                    </li>
+                </ul>
+                <i class="fas fa-times nav__close" id="nav-close"></i>
+            </div>
+
+            <div class="nav__btns">
+                <!-- Theme change button -->
+                <button class="change-theme" id="theme-button" data-theme-toggle aria-label="テーマ切り替え">
+                    <i class="fas fa-moon"></i>
+                </button>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main -->
+    <main class="main">
+        <!-- Top Image / Hero Section -->
+        <section class="top-image section" id="home">
+            <div class="top-image__container container">
+                <div class="top-image__content" data-animation="fadeInUp">
+                    <h1 class="top-image__title">
+                        創造性を<span class="text-gradient">共有</span>する<br>
+                        3人のクリエイター集団
+                    </h1>
+                    <p class="top-image__description">
+                        ウェブ開発、デザイン、マーケティングの専門スキルを持つ
+                        クリエイターたちが連携して、あなたのプロジェクトを
+                        次のレベルへと導きます。
+                    </p>
+                    <div class="top-image__buttons">
+                        <a href="#team" class="button button--flex">
+                            <i class="fas fa-users button__icon"></i>
+                            メンバーを見る
+                        </a>
+                        <a href="#contact" class="button button--ghost button--flex">
+                            <i class="fas fa-paper-plane button__icon"></i>
+                            お問い合わせ
+                        </a>
+                    </div>
+                </div>
+                <div class="top-image__visual" data-animation="fadeInRight">
+                    <div class="top-image__shape">
+                        <div class="floating-icon" data-parallax="0.2">
+                            <i class="fab fa-react"></i>
+                        </div>
+                        <div class="floating-icon" data-parallax="0.3">
+                            <i class="fab fa-figma"></i>
+                        </div>
+                        <div class="floating-icon" data-parallax="0.1">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Scroll indicator -->
+            <div class="scroll-indicator" data-animation="bounce">
+                <div class="mouse">
+                    <div class="wheel"></div>
+                </div>
+                <span>スクロール</span>
+            </div>
+        </section>
+
+        <!-- About Team Section -->
+        <section class="about section" id="about">
+            <div class="section__header" data-animation="fadeInUp">
+                <span class="section__subtitle">私たちについて</span>
+                <h2 class="section__title">チーム Creative Trio</h2>
+                <p class="section__description">
+                    異なる専門分野を持つ3人のクリエイターが、<br>
+                    ひとつの目標に向かって協力し合うチームです。
+                </p>
+            </div>
+
+            <div class="about__container">
+                <div class="about__grid">
+                <div class="about__content" data-animation="slideInLeft">
+                    <div class="about__info">
+                        <h3 class="about__title">私たちの強み</h3>
+                        <p class="about__description">
+                            ウェブ開発からデザイン、マーケティングまで、
+                            デジタルプロジェクトに必要な全ての要素を
+                            一貫してサポートできることが私たちの最大の強みです。
+                        </p>
+                        
+                        <div class="about__stats">
+                            <div class="stats__item">
+                                <span class="stats__number" data-counter="150" data-duration="2000">0</span>
+                                <span class="stats__label">完了プロジェクト</span>
+                            </div>
+                            <div class="stats__item">
+                                <span class="stats__number" data-counter="3" data-duration="1000">0</span>
+                                <span class="stats__label">年の協力関係</span>
+                            </div>
+                            <div class="stats__item">
+                                <span class="stats__number" data-counter="98" data-duration="2500">0</span>
+                                <span class="stats__label">%顧客満足度</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about__visual" data-animation="slideInRight">
+                    <div class="about__image">
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                             alt="チームワーク" 
+                             data-src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                             loading="lazy">
+                        <div class="about__shape"></div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Members Section -->
+        <section class="team section" id="team">
+            <div class="section__header" data-animation="fadeInUp">
+                <span class="section__subtitle">チームメンバー</span>
+                <h2 class="section__title">3人のクリエイター</h2>
+                <p class="section__description">
+                    それぞれの専門分野で豊富な経験を持つメンバーをご紹介します
+                </p>
+            </div>
+
+            <div class="team__container">
+                <div class="team__grid">
+                <!-- Team Member 1: 田中太郎 -->
+                <article class="team__card" data-animation="fadeInUp" data-delay="100">
+                    <div class="team__image">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                             alt="田中太郎" 
+                             data-src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                             loading="lazy">
+                        <div class="team__overlay">
+                            <div class="team__social">
+                                <a href="#" class="team__social-link" aria-label="GitHub">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="#" class="team__social-link" aria-label="LinkedIn">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                                <a href="#" class="team__social-link" aria-label="Twitter">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team__info">
+                        <h3 class="team__name">田中 太郎</h3>
+                        <span class="team__role">フロントエンド・フルスタック開発者</span>
+                        <p class="team__description">
+                            React、Vue.js、Node.jsを使用したモダンなウェブアプリケーション開発が専門。
+                            5年以上の経験を持つフルスタック開発者。
+                        </p>
+                        <div class="team__skills">
+                            <span class="skill-tag">React</span>
+                            <span class="skill-tag">Vue.js</span>
+                            <span class="skill-tag">Node.js</span>
+                            <span class="skill-tag">TypeScript</span>
+                        </div>
+                        <a href="person1.html" class="button button--small button--flex">
+                            <i class="fas fa-user button__icon"></i>
+                            詳細を見る
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Team Member 2: 佐藤花子 -->
+                <article class="team__card" data-animation="fadeInUp" data-delay="200">
+                    <div class="team__image">
+                        <img src="https://images.unsplash.com/photo-1494790108755-2616b612b2e3?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                             alt="佐藤花子" 
+                             data-src="https://images.unsplash.com/photo-1494790108755-2616b612b2e3?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                             loading="lazy">
+                        <div class="team__overlay">
+                            <div class="team__social">
+                                <a href="#" class="team__social-link" aria-label="Dribbble">
+                                    <i class="fab fa-dribbble"></i>
+                                </a>
+                                <a href="#" class="team__social-link" aria-label="Behance">
+                                    <i class="fab fa-behance"></i>
+                                </a>
+                                <a href="#" class="team__social-link" aria-label="Instagram">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team__info">
+                        <h3 class="team__name">佐藤 花子</h3>
+                        <span class="team__role">UI/UXデザイナー</span>
+                        <p class="team__description">
+                            ユーザー中心のデザイン思考を重視し、美しく使いやすい
+                            インターフェースの設計が得意なデザイナー。
+                        </p>
+                        <div class="team__skills">
+                            <span class="skill-tag">Figma</span>
+                            <span class="skill-tag">Adobe XD</span>
+                            <span class="skill-tag">Photoshop</span>
+                            <span class="skill-tag">Illustrator</span>
+                        </div>
+                        <a href="person2.html" class="button button--small button--flex">
+                            <i class="fas fa-user button__icon"></i>
+                            詳細を見る
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Team Member 3: 山田次郎 -->
+                <article class="team__card" data-animation="fadeInUp" data-delay="300">
+                    <div class="team__image">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                             alt="山田次郎" 
+                             data-src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                             loading="lazy">
+                        <div class="team__overlay">
+                            <div class="team__social">
+                                <a href="#" class="team__social-link" aria-label="LinkedIn">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                                <a href="#" class="team__social-link" aria-label="Twitter">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#" class="team__social-link" aria-label="Medium">
+                                    <i class="fab fa-medium"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team__info">
+                        <h3 class="team__name">山田 次郎</h3>
+                        <span class="team__role">マーケティングスペシャリスト</span>
+                        <p class="team__description">
+                            SEO、SEM、SNSマーケティングなど、デジタル領域での
+                            集客戦略立案・実行を専門とするマーケター。
+                        </p>
+                        <div class="team__skills">
+                            <span class="skill-tag">Google Analytics</span>
+                            <span class="skill-tag">SEO</span>
+                            <span class="skill-tag">SEM</span>
+                            <span class="skill-tag">SNS Marketing</span>
+                        </div>
+                        <a href="person3.html" class="button button--small button--flex">
+                            <i class="fas fa-user button__icon"></i>
+                            詳細を見る
+                        </a>
+                    </div>
+                </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="services section" id="services">
+            <div class="section__header" data-animation="fadeInUp">
+                <span class="section__subtitle">サービス</span>
+                <h2 class="section__title">私たちができること</h2>
+                <p class="section__description">
+                    ウェブ開発からマーケティングまで、<br>
+                    ワンストップでサポートします
+                </p>
+            </div>
+
+            <div class="services__container">
+                <div class="services__grid">
+                <div class="services__card" data-animation="fadeInUp" data-delay="100">
+                    <div class="services__icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 class="services__title">ウェブ開発</h3>
+                    <p class="services__description">
+                        モダンな技術スタックを使用した
+                        高品質なウェブアプリケーション開発
+                    </p>
+                    <ul class="services__list">
+                        <li>フロントエンド開発</li>
+                        <li>バックエンド開発</li>
+                        <li>データベース設計</li>
+                        <li>API開発</li>
+                    </ul>
+                </div>
+
+                <div class="services__card" data-animation="fadeInUp" data-delay="200">
+                    <div class="services__icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h3 class="services__title">UI/UXデザイン</h3>
+                    <p class="services__description">
+                        ユーザー体験を重視した
+                        美しく機能的なデザイン制作
+                    </p>
+                    <ul class="services__list">
+                        <li>ユーザーリサーチ</li>
+                        <li>ワイヤーフレーム設計</li>
+                        <li>プロトタイプ作成</li>
+                        <li>デザインシステム構築</li>
+                    </ul>
+                </div>
+
+                <div class="services__card" data-animation="fadeInUp" data-delay="300">
+                    <div class="services__icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="services__title">デジタルマーケティング</h3>
+                    <p class="services__description">
+                        データドリブンなアプローチで
+                        効果的な集客戦略を提供
+                    </p>
+                    <ul class="services__list">
+                        <li>SEO対策</li>
+                        <li>リスティング広告</li>
+                        <li>SNSマーケティング</li>
+                        <li>アクセス解析</li>
+                    </ul>
+                </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact section" id="contact">
+            <div class="section__header" data-animation="fadeInUp">
+                <span class="section__subtitle">お問い合わせ</span>
+                <h2 class="section__title">プロジェクトを始めましょう</h2>
+                <p class="section__description">
+                    お客様のアイデアを現実にするお手伝いをさせてください
+                </p>
+            </div>
+
+            <div class="contact__container container grid">
+                <div class="contact__content" data-animation="slideInLeft">
+                    <div class="contact__info">
+                        <div class="contact__card">
+                            <i class="fas fa-phone contact__card-icon"></i>
+                            <h3 class="contact__card-title">お電話</h3>
+                            <span class="contact__card-data">03-1234-5678</span>
+                        </div>
+
+                        <div class="contact__card">
+                            <i class="fas fa-envelope contact__card-icon"></i>
+                            <h3 class="contact__card-title">メール</h3>
+                            <span class="contact__card-data">info@creativetrio.com</span>
+                        </div>
+
+                        <div class="contact__card">
+                            <i class="fas fa-map-marker-alt contact__card-icon"></i>
+                            <h3 class="contact__card-title">所在地</h3>
+                            <span class="contact__card-data">
+                                東京都渋谷区<br>
+                                オンライン対応可能
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact__form-container" data-animation="slideInRight">
+                    <form class="contact__form" id="contact-form">
+                        <div class="contact__form-div">
+                            <label class="contact__form-tag" for="contact-name">お名前 *</label>
+                            <input 
+                                type="text" 
+                                id="contact-name"
+                                name="name"
+                                placeholder="お名前を入力してください" 
+                                class="contact__form-input"
+                                required
+                                data-validate="required|min:2">
+                        </div>
+
+                        <div class="contact__form-div">
+                            <label class="contact__form-tag" for="contact-email">メールアドレス *</label>
+                            <input 
+                                type="email" 
+                                id="contact-email"
+                                name="email"
+                                placeholder="your@email.com" 
+                                class="contact__form-input"
+                                required
+                                data-validate="required|email">
+                        </div>
+
+                        <div class="contact__form-div">
+                            <label class="contact__form-tag" for="contact-subject">件名</label>
+                            <input 
+                                type="text" 
+                                id="contact-subject"
+                                name="subject"
+                                placeholder="プロジェクトについて" 
+                                class="contact__form-input"
+                                data-validate="min:3">
+                        </div>
+
+                        <div class="contact__form-div contact__form-area">
+                            <label class="contact__form-tag" for="contact-message">メッセージ *</label>
+                            <textarea 
+                                id="contact-message"
+                                name="message"
+                                cols="30" 
+                                rows="10" 
+                                placeholder="プロジェクトの詳細をお聞かせください..." 
+                                class="contact__form-input"
+                                required
+                                data-validate="required|min:10"></textarea>
+                        </div>
+
+                        <button type="submit" class="button button--flex">
+                            <i class="fas fa-paper-plane button__icon"></i>
+                            送信する
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer__bg">
+            <div class="footer__container container grid">
+                <div class="footer__content">
+                    <h1 class="footer__title">Creative Trio</h1>
+                    <span class="footer__subtitle">3人のクリエイター集団</span>
+                    <p class="footer__description">
+                        あなたのアイデアを現実にするお手伝いをします
+                    </p>
+                </div>
+
+                <ul class="footer__links">
+                    <li><a href="#about" class="footer__link">チームについて</a></li>
+                    <li><a href="#team" class="footer__link">メンバー</a></li>
+                    <li><a href="#services" class="footer__link">サービス</a></li>
+                    <li><a href="#contact" class="footer__link">お問い合わせ</a></li>
+                </ul>
+
+                <div class="footer__socials">
+                    <a href="#" class="footer__social" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="#" class="footer__social" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="#" class="footer__social" aria-label="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </div>
+            </div>
+
+            <p class="footer__copy">
+                &#169; 2024 Creative Trio. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Scroll Top -->
+    <button class="scroll-top" aria-label="ページトップへ戻る">
+        <i class="fas fa-angle-up scroll-top__icon"></i>
+    </button>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <div class="toast__content">
+            <div class="toast__icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <div class="toast__message"></div>
+        </div>
+        <button class="toast__close" aria-label="通知を閉じる">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+
+    <!-- JavaScript -->
+    <script type="module" src="script.js"></script>
+    
+    <!-- Service Worker for PWA (Optional) -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then((registration) => {
+                        console.log('SW registered: ', registration);
+                    })
+                    .catch((registrationError) => {
+                        console.log('SW registration failed: ', registrationError);
+                    });
+            });
+        }
+    </script>
+
+    <!-- Performance monitoring (optional) -->
+    <script>
+        // Basic performance monitoring
+        window.addEventListener('load', () => {
+            const loadTime = performance.timing.loadEventEnd - performance.timing.navigationStart;
+            console.log(`Page load time: ${loadTime}ms`);
+        });
+    </script>
+</body>
+</html> 

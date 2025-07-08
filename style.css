@@ -1,0 +1,93 @@
+/*==================== PORTFOLIO CSS MODULES ====================*/
+
+/* CSS Variables and Configuration */
+@import url('./css/variables.css');
+
+/* Base Styles and Reset */
+@import url('./css/base.css');
+
+/* Reusable Components */
+@import url('./css/components.css');
+
+/* Layout Sections */
+@import url('./css/layout.css');
+
+/* Animations and Responsive Design */
+@import url('./css/animations.css');
+
+/*==================== CUSTOM SCROLLBAR ====================*/
+::-webkit-scrollbar {
+    width: 0.60rem;
+    background-color: var(--scroll-bar-color);
+    border-radius: 0.5rem;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--scroll-thumb-color);
+    border-radius: 0.5rem;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--text-color-light);
+}
+
+/*==================== SELECTION STYLES ====================*/
+::selection {
+    background-color: var(--first-color);
+    color: #fff;
+}
+
+::-moz-selection {
+    background-color: var(--first-color);
+    color: #fff;
+}
+
+/*==================== FOCUS STYLES ====================*/
+:focus {
+    outline: 2px solid var(--first-color);
+    outline-offset: 2px;
+}
+
+/*==================== SKIP LINK ====================*/
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 6px;
+    background: var(--first-color);
+    color: white;
+    padding: 8px;
+    text-decoration: none;
+    border-radius: 4px;
+    z-index: 1000;
+}
+
+.skip-link:focus {
+    top: 6px;
+}
+
+/*==================== LOADING STATES ====================*/
+.loading {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255,255,255,.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/*==================== ERROR STATES ====================*/
+.error {
+    border-color: #e74c3c !important;
+    background-color: rgba(231, 76, 60, 0.1) !important;
+}
+
+.error-message {
+    color: #e74c3c;
+    font-size: var(--small-font-size);
+    margin-top: 0.5rem;
+} 
