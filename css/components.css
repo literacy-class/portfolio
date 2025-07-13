@@ -1316,3 +1316,23 @@
 .contact__card-link:hover i {
     transform: translateX(2px);
 } 
+
+/*========== CONTACT MAP ==========*/
+.contact__map-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 2rem auto 0 auto;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+}
+
+@media screen and (max-width: 768px) {
+    .contact__map-container {
+        max-width: 100%;
+        height: 250px;
+    }
+    .contact__map-container iframe {
+        height: 250px;
+    }
+} 
