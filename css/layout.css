@@ -569,15 +569,32 @@
 .skills__close .skills__list {
     height: 0;
     overflow: hidden;
+    transition: height 0.3s ease-in-out;
 }
 
 .skills__open .skills__list {
     height: max-content;
     margin-bottom: var(--mb-2-5);
+    transition: height 0.3s ease-in-out;
 }
 
 .skills__open .skills__arrow {
-    transform: rotate(-180deg);
+    transform: rotate(180deg);
+    transition: transform 0.3s ease-in-out;
+}
+
+.skills__arrow {
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.skills__header {
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.skills__header:hover {
+    background-color: rgba(var(--first-color-rgb), 0.05);
 }
 
 /*========== PORTFOLIO SECTION ==========*/

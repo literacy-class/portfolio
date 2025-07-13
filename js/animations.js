@@ -504,6 +504,79 @@ class TooltipAnimation {
     }
 }
 
+/**
+ * スキルアコーディオンクラス
+ */
+class SkillsAccordion {
+    constructor() {
+        this.skillsHeaders = selectAll('.skills__header');
+        this.init();
+    }
+    
+    /**
+     * 初期化
+     */
+    init() {
+        this.bindEvents();
+    }
+    
+    /**
+     * イベントハンドラーを設定
+     */
+    bindEvents() {
+        this.skillsHeaders.forEach(header => {
+            header.addEventListener('click', () => this.toggleSkills(header));
+        });
+    }
+    
+    /**
+     * スキルセクションの開閉
+     * @param {HTMLElement} header - クリックされたヘッダー要素
+     */
+    toggleSkills(header) {
+        const skillsContent = header.parentElement;
+        const arrow = header.querySelector('.skills__arrow');
+        
+        // 現在の状態を確認
+        const isOpen = skillsContent.classList.contains('skills__open');
+        
+        // 他のスキルセクションを閉じる
+        this.closeAllSkills();
+        
+        // クリックされたセクションを開く/閉じる
+        if (!isOpen) {
+            addClass(skillsContent, 'skills__open');
+            removeClass(skillsContent, 'skills__close');
+            if (arrow) {
+                arrow.style.transform = 'rotate(180deg)';
+            }
+        } else {
+            removeClass(skillsContent, 'skills__open');
+            addClass(skillsContent, 'skills__close');
+            if (arrow) {
+                arrow.style.transform = 'rotate(0deg)';
+            }
+        }
+    }
+    
+    /**
+     * すべてのスキルセクションを閉じる
+     */
+    closeAllSkills() {
+        const allSkillsContent = selectAll('.skills__content');
+        const allArrows = selectAll('.skills__arrow');
+        
+        allSkillsContent.forEach(content => {
+            removeClass(content, 'skills__open');
+            addClass(content, 'skills__close');
+        });
+        
+        allArrows.forEach(arrow => {
+            arrow.style.transform = 'rotate(0deg)';
+        });
+    }
+}
+
 // エクスポート
 export { 
     ScrollAnimations, 
@@ -511,5 +584,6 @@ export {
     SkillBarAnimation, 
     TypingAnimation, 
     ModalAnimation, 
-    TooltipAnimation 
+    TooltipAnimation,
+    SkillsAccordion
 }; 
