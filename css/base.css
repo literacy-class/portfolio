@@ -13,12 +13,16 @@ html {
 }
 
 body {
-    margin: 0 0 var(--header-height) 0;
+    margin: 0;
     font-family: var(--body-font);
     font-size: var(--normal-font-size);
     background-color: var(--body-color);
     color: var(--text-color);
     line-height: 1.6;
+}
+
+.main {
+    margin-top: calc(var(--header-height) + 1rem);
 }
 
 h1, h2, h3, h4 {
@@ -77,6 +81,26 @@ input, textarea {
     max-width: 768px;
     margin-left: var(--mb-1-5);
     margin-right: var(--mb-1-5);
+}
+
+/* スマホサイズでのコンテナ調整 */
+@media screen and (max-width: 480px) {
+    .container {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+    
+    .section {
+        padding: 2rem 0 3rem;
+    }
+    
+    .section__title {
+        font-size: 1.5rem;
+    }
+    
+    .section__subtitle {
+        font-size: 0.8rem;
+    }
 }
 
 .grid {

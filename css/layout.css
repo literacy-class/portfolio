@@ -32,7 +32,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    z-index: var(--z-fixed);
+    z-index: 50;
     background: var(--glass-bg-light);
     backdrop-filter: var(--glass-backdrop-strong);
     -webkit-backdrop-filter: var(--glass-backdrop-strong);
@@ -139,6 +139,32 @@
 
     .nav__list {
         column-gap: 0;
+    }
+    
+    /* スマホサイズでのメインコンテンツの調整 */
+    .main {
+        margin-top: calc(var(--header-height) + 1rem);
+    }
+    
+    .section {
+        padding: 3rem 0 2rem;
+    }
+    
+    .top-image {
+        min-height: 60vh;
+        margin-top: calc(var(--header-height) + 1rem);
+    }
+    
+    .top-image__title {
+        font-size: 2rem;
+    }
+    
+    .top-image__subtitle {
+        font-size: 1rem;
+    }
+    
+    .top-image__description {
+        font-size: 0.9rem;
     }
 }
 
@@ -407,7 +433,7 @@
         border-left: 1px solid var(--glass-border);
         padding: 4.5rem 0 0 3rem;
         transition: 0.3s;
-        z-index: var(--z-fixed);
+        z-index: 60;
     }
 
     .nav__list {
@@ -515,6 +541,7 @@
 @media screen and (max-width: 768px) {
     .top-image {
         min-height: 80vh;
+        margin-top: calc(var(--header-height) + 1rem);
     }
     
     .scroll-indicator {
@@ -530,11 +557,25 @@
         width: 3px;
         height: 6px;
     }
+    
+    /* タブレットサイズでの調整 */
+    .main {
+        margin-top: calc(var(--header-height) + 1rem);
+    }
+    
+    .section {
+        padding: 4rem 0 2rem;
+    }
+    
+    .container {
+        padding: 0 1.5rem;
+    }
 }
 
 @media screen and (max-width: 480px) {
     .top-image {
         min-height: 70vh;
+        margin-top: calc(var(--header-height) + 1rem);
     }
     
     .mouse {
@@ -545,6 +586,34 @@
     .wheel {
         width: 2px;
         height: 5px;
+    }
+    
+    /* スマホサイズでの全体的な調整 */
+    .main {
+        margin-top: calc(var(--header-height) + 1rem);
+    }
+    
+    .section {
+        padding: 3rem 0 2rem;
+    }
+    
+    .container {
+        padding: 0 1rem;
+    }
+    
+    .team__grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .services__grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .portfolio__grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
     }
 }
 
