@@ -1290,3 +1290,29 @@
         font-size: 1rem;
     }
 } 
+
+/*========== CONTACT CARD LINKS ==========*/
+.contact__card-link {
+    color: var(--first-color);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: var(--font-medium);
+    transition: all 0.3s ease;
+    padding: 0.25rem 0;
+}
+
+.contact__card-link:hover {
+    color: var(--first-color-alt);
+    transform: translateX(3px);
+}
+
+.contact__card-link i {
+    font-size: 0.8rem;
+    transition: transform 0.3s ease;
+}
+
+.contact__card-link:hover i {
+    transform: translateX(2px);
+} 
