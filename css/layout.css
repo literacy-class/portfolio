@@ -578,6 +578,7 @@
     overflow: hidden;
     transition: max-height 0.3s ease-in-out;
     margin-bottom: var(--mb-2-5);
+    transition: height 0.3s ease-in-out;
 }
 
 .skills__open .skills__arrow {
