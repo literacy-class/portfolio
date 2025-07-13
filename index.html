@@ -465,6 +465,27 @@
     </div>
 
     <!-- JavaScript -->
+    <script type="module">
+        // スキルアコーディオン機能を直接実装
+        document.addEventListener('DOMContentLoaded', function() {
+            const headers = document.querySelectorAll('.skills__header');
+            
+            headers.forEach((header, index) => {
+                header.addEventListener('click', function() {
+                    const content = this.parentElement;
+                    const isOpen = content.classList.contains('skills__open');
+                    
+                    if (isOpen) {
+                        content.classList.remove('skills__open');
+                        content.classList.add('skills__close');
+                    } else {
+                        content.classList.remove('skills__close');
+                        content.classList.add('skills__open');
+                    }
+                });
+            });
+        });
+    </script>
     <script type="module" src="script.js"></script>
     
     <!-- Service Worker for PWA (Optional) -->

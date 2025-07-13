@@ -2,7 +2,7 @@
 
 // モジュールのインポート
 import { Navigation } from './js/navigation.js';
-import { ScrollAnimations } from './js/animations.js';
+import { ScrollAnimations, SkillsAccordion } from './js/animations.js';
 import { FormHandler } from './js/forms.js';
 import { 
     select, 
@@ -77,6 +77,9 @@ class PortfolioApp {
         
         // スクロールアニメーション
         this.components.animations = new ScrollAnimations();
+        
+        // スキルアコーディオン（HTMLで直接実装済みのため無効化）
+        // this.components.skillsAccordion = new SkillsAccordion();
         
         // フォームハンドラー
         this.components.forms = new FormHandler();
