@@ -103,7 +103,7 @@ git push origin main  # 再度プッシュ
 
 #### GitHub Pages
 - リポジトリ: https://github.com/literacy-class/portfolio.git
-- 公開URL: https://literacy-class.github.io/portfolio/
+- 公開URL: literacy-classportfolio030.com
 - 自動デプロイ: mainブランチへのプッシュで自動更新
 
 ### 技術スタック
