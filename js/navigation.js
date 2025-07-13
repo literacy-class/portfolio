@@ -10,8 +10,8 @@ class Navigation {
         this.header = select('#header');
         this.nav = select('.nav');
         this.navMenu = select('.nav__menu');
-        this.navToggle = select('.nav__toggle');
-        this.navClose = select('.nav__close');
+        this.navToggle = select('#nav-toggle');
+        this.navClose = select('#nav-close');
         this.navLinks = selectAll('.nav__link');
         this.sections = selectAll('section[id]');
         
@@ -32,19 +32,39 @@ class Navigation {
      */
     bindEvents() {
         // メニュートグル
-        if (this.navToggle) {
-            this.navToggle.addEventListener('click', () => this.showMenu());
+        if (this.navToggle && this.navMenu) {
+            this.navToggle.addEventListener('click', (e) => {
+                e.stopPropagation();
+                if (this.navMenu.classList.contains('show-menu')) {
+                    this.hideMenu();
+                } else {
+                    this.showMenu();
+                }
+            }, { once: false });
+        } else {
+            console.warn('navToggleまたはnavMenuが見つかりません');
         }
-        
-        if (this.navClose) {
-            this.navClose.addEventListener('click', () => this.hideMenu());
+        if (this.navClose && this.navMenu) {
+            this.navClose.addEventListener('click', () => {
+                this.hideMenu();
+            }, { once: false });
+        } else {
+            console.warn('navCloseまたはnavMenuが見つかりません');
         }
-        
+        // メニュー外クリックで閉じる
+        document.addEventListener('click', (e) => {
+            if (
+                this.navMenu.classList.contains('show-menu') &&
+                !this.navMenu.contains(e.target) &&
+                e.target !== this.navToggle
+            ) {
+                this.hideMenu();
+            }
+        });
         // ナビゲーションリンク
         this.navLinks.forEach(link => {
             link.addEventListener('click', (e) => this.handleLinkClick(e));
         });
-        
         // スクロール時の処理
         window.addEventListener('scroll', throttle(() => {
             this.handleScroll();

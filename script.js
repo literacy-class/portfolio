@@ -9,8 +9,6 @@ import {
     selectAll, 
     addClass, 
     removeClass, 
-    showToast,
-    isElementInViewport,
     scrollToElement 
 } from './js/utils.js';
 
