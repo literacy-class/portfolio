@@ -248,9 +248,9 @@ class Breadcrumb {
      */
     getDisplayName(segment) {
         const displayNames = {
-            'person1': '田中太郎',
-            'person2': '佐藤花子',
-            'person3': '鈴木次郎',
+            'person1': '山本彩乃',
+            'person2': '野崎大翔',
+            'person3': '古山玲菜',
             'about': 'About',
             'skills': 'Skills',
             'projects': 'Projects',
