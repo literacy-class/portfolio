@@ -293,40 +293,7 @@
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .nav__menu {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 80%;
-        height: 100vh;
-        background-color: var(--body-color);
-        box-shadow: var(--shadow-strong);
-        z-index: var(--z-fixed);
-        transition: right 0.3s ease;
-        padding: 6rem 3rem 0;
-    }
-
-    .nav__menu.show-menu {
-        right: 0;
-    }
-
-    .nav__list {
-        flex-direction: column;
-        row-gap: 2rem;
-    }
-
-    .nav__toggle {
-        display: block;
-    }
-
-    .nav__close {
-        position: absolute;
-        top: 1rem;
-        right: 1.3rem;
-        font-size: 1.5rem;
-        cursor: pointer;
-        display: block;
-    }
+    /* Mobile navigation styles moved to layout.css to avoid conflicts */
 }
 
 /* For medium devices */

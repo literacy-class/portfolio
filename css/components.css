@@ -165,25 +165,7 @@
 }
 
 /* Mobile menu */
-@media screen and (max-width: 767px) {
-    .nav__menu {
-        position: fixed;
-        bottom: -100%;
-        left: 0;
-        width: 100%;
-        background-color: var(--body-color);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        padding: 2rem 1.5rem 4rem;
-        box-shadow: var(--shadow-medium);
-        border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;
-        transition: var(--transition-normal);
-    }
-    
-    .show-menu {
-        bottom: 0;
-    }
-}
+/* Mobile navigation styles moved to layout.css to avoid conflicts */
 
 /*========== CARDS ==========*/
 .card {
