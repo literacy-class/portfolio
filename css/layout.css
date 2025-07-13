@@ -296,17 +296,15 @@
     margin-bottom: 1rem;
     color: var(--title-color);
     position: relative;
-    display: inline-block;
-    left: 25%;
-    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .section__title::after {
     content: '';
     position: absolute;
     bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
     width: 50px;
     height: 4px;
     background: linear-gradient(135deg, var(--first-color), var(--first-color-alt));
@@ -317,8 +315,6 @@
     display: block;
     text-align: center;
     position: relative;
-    transform: translateX(-50%);
-    left: 50%;
     font-size: 1.1rem;
     color: var(--text-color);
     margin-bottom: 3rem;
