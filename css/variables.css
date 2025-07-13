@@ -92,18 +92,18 @@
     /*========== Gradients (Enhanced for Modern Design) ==========*/
     --gradient-primary: linear-gradient(135deg, var(--first-color), var(--first-color-alt));
     --gradient-background: linear-gradient(135deg, rgba(249, 250, 251, 0.95), rgba(243, 244, 246, 0.98));
-    --gradient-card: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(249, 250, 251, 0.9));
+    --gradient-card: linear-gradient(135deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1));
     --gradient-hero: linear-gradient(135deg, rgba(79, 70, 229, 0.1), rgba(168, 85, 247, 0.1));
-    --gradient-overlay: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.05));
+    --gradient-overlay: linear-gradient(135deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1));
     --gradient-button: linear-gradient(135deg, #4f46e5, #7c3aed);
     --gradient-button-hover: linear-gradient(135deg, #3730a3, #5b21b6);
     
     /*========== Glass effect (Enhanced) ==========*/
-    --glass-bg: rgba(255, 255, 255, 0.85);
-    --glass-bg-light: rgba(255, 255, 255, 0.95);
-    --glass-border: rgba(255, 255, 255, 0.3);
-    --glass-backdrop: blur(20px);
-    --glass-backdrop-strong: blur(30px);
+    --glass-bg: rgba(255, 255, 255, 0);
+    --glass-bg-light: rgba(255, 255, 255, 0);
+    --glass-border: rgba(255, 255, 255, 0);
+    --glass-backdrop: none;
+    --glass-backdrop-strong: none;
 }
 
 /*========== Variables Dark theme ==========*/
@@ -119,11 +119,11 @@ body.dark-theme {
     --scroll-thumb-color: hsl(var(--hue-color), 12%, 36%);
     
     /*========== Glass effect dark ==========*/
-    --glass-bg: rgba(0, 0, 0, 0.4);
-    --glass-bg-light: rgba(0, 0, 0, 0.6);
-    --glass-border: rgba(255, 255, 255, 0.1);
-    --glass-backdrop: blur(20px);
-    --glass-backdrop-strong: blur(30px);
+    --glass-bg: rgba(0, 0, 0, 0);
+    --glass-bg-light: rgba(0, 0, 0, 0);
+    --glass-border: rgba(255, 255, 255, 0);
+    --glass-backdrop: none;
+    --glass-backdrop-strong: none;
 }
 
 /*========== Button Dark/Light ==========*/

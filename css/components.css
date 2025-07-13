@@ -83,8 +83,7 @@
     left: 0;
     z-index: var(--z-fixed);
     background-color: var(--body-color);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    /* backdrop-filter removed for clarity */
     border-top: 1px solid rgba(255, 255, 255, 0.18);
     transition: var(--transition-normal);
 }
@@ -262,7 +261,6 @@
     justify-content: center;
     font-size: 1.1rem;
     transition: all 0.3s ease;
-    backdrop-filter: blur(10px);
 }
 
 .team__social-link:hover {
@@ -526,7 +524,7 @@
 .stats__item {
     text-align: center;
     padding: 1.5rem;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(249, 250, 251, 0.8));
+    background: rgba(255, 255, 255, 1);
     border-radius: 1.5rem;
     border: 1px solid rgba(79, 70, 229, 0.1);
     transition: all 0.3s ease;
@@ -589,7 +587,7 @@
 .floating-icon {
     position: absolute;
     padding: 1rem;
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 1);
     border-radius: 50%;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     animation: float 3s ease-in-out infinite;
@@ -629,9 +627,8 @@
 
 /*========== PROFILE CARD ==========*/
 .profile-card {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 1);
+    border: 1px solid rgba(255, 255, 255, 1);
     border-radius: 20px;
     padding: 2rem;
     margin-bottom: 2rem;
@@ -700,7 +697,7 @@
     align-items: center;
     gap: 1rem;
     padding: 0.75rem;
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 1);
     border-radius: 12px;
     transition: all 0.3s ease;
 }
@@ -744,9 +741,8 @@
 
 /*========== STATS CARDS ==========*/
 .stats-card {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 1);
+    border: 1px solid rgba(255, 255, 255, 1);
     border-radius: 16px;
     padding: 1.5rem;
     text-align: center;
