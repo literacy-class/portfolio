@@ -125,29 +125,102 @@
     display: none;
 }
 
-/*========== TOP IMAGE / HERO ==========*/
+/*========== TOP IMAGE SECTION ==========*/
 .top-image {
-    min-height: 100vh;
-    padding: var(--section-padding-large) 0 var(--section-padding);
-    background: var(--gradient-hero);
     position: relative;
-    overflow: hidden;
+    min-height: 100vh;
     display: flex;
     align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: var(--body-color);
 }
 
-.top-image::before {
-    content: '';
+.top-image__video {
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    background: 
-        radial-gradient(circle at 25% 25%, rgba(120, 119, 198, 0.15) 0%, transparent 50%),
-        radial-gradient(circle at 75% 75%, rgba(255, 119, 198, 0.12) 0%, transparent 50%),
-        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><defs><pattern id="hero-pattern" width="50" height="50" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="2" fill="%23ffffff" opacity="0.05"/></pattern></defs><rect width="200" height="200" fill="url(%23hero-pattern)"/></svg>');
-    pointer-events: none;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    color: white;
+    text-align: center;
+}
+
+.mouse {
+    width: 30px;
+    height: 50px;
+    border: 2px solid white;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+    margin: 0 auto 10px;
+}
+
+.wheel {
+    width: 4px;
+    height: 8px;
+    background: white;
+    border-radius: 2px;
+    animation: scroll 1.5s infinite;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(15px);
+        opacity: 0;
+    }
+}
+
+/* レスポンシブ対応 */
+@media screen and (max-width: 768px) {
+    .top-image {
+        min-height: 80vh;
+    }
+    
+    .scroll-indicator {
+        bottom: 1rem;
+    }
+    
+    .mouse {
+        width: 25px;
+        height: 40px;
+    }
+    
+    .wheel {
+        width: 3px;
+        height: 6px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .top-image {
+        min-height: 70vh;
+    }
+    
+    .mouse {
+        width: 20px;
+        height: 35px;
+    }
+    
+    .wheel {
+        width: 2px;
+        height: 5px;
+    }
 }
 
 .top-image__container {
