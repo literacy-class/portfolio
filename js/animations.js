@@ -525,7 +525,10 @@ class SkillsAccordion {
      */
     bindEvents() {
         this.skillsHeaders.forEach(header => {
-            header.addEventListener('click', () => this.toggleSkills(header));
+            header.addEventListener('click', (e) => {
+                e.stopPropagation();
+                this.toggleSkills(header);
+            });
         });
     }
     
@@ -534,15 +537,13 @@ class SkillsAccordion {
      * @param {HTMLElement} header - クリックされたヘッダー要素
      */
     toggleSkills(header) {
-        const skillsContent = header.parentElement;
+        // .skills__contentを親要素として取得（header.parentElementが必ずそうとは限らないため）
+        let skillsContent = header.closest('.skills__content');
+        if (!skillsContent) return;
         const arrow = header.querySelector('.skills__arrow');
-        
-        // 現在の状態を確認
         const isOpen = skillsContent.classList.contains('skills__open');
-        
         // 他のスキルセクションを閉じる
         this.closeAllSkills();
-        
         // クリックされたセクションを開く/閉じる
         if (!isOpen) {
             addClass(skillsContent, 'skills__open');
