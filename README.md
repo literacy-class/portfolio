@@ -25,6 +25,75 @@ portfolio/
 ```
 
 ### 開発ルール
+
+#### 基本的なGitコマンド（初心者向け）
+
+##### 1. リポジトリの初期設定
+```bash
+# リポジトリをクローン（初回のみ）
+git clone https://github.com/literacy-class/portfolio.git
+cd portfolio
+
+# リモートリポジトリの確認
+git remote -v
+```
+
+##### 2. 日常的な作業フロー
+```bash
+# 最新の変更を取得
+git pull origin main
+
+# 変更したファイルの確認
+git status
+
+# 変更したファイルをステージング
+git add ファイル名
+git add .  # すべての変更をステージング
+
+# 変更をコミット
+git commit -m "変更内容の説明"
+
+# リモートにプッシュ
+git push origin main
+```
+
+##### 3. よく使うコマンド
+```bash
+# 変更履歴の確認
+git log --oneline
+
+# 特定のファイルの変更内容確認
+git diff ファイル名
+
+# 変更を取り消す（ステージング前）
+git restore ファイル名
+
+# ステージングを取り消す
+git restore --staged ファイル名
+
+# ブランチの確認
+git branch
+
+# 新しいブランチを作成
+git checkout -b feature/新機能名
+
+# ブランチを切り替え
+git checkout ブランチ名
+```
+
+##### 4. トラブルシューティング
+```bash
+# コンフリクトが発生した場合
+git status  # コンフリクトファイルを確認
+# ファイルを編集してコンフリクトを解決
+git add .
+git commit -m "Resolve merge conflicts"
+
+# プッシュが拒否された場合
+git pull origin main  # 最新の変更を取得
+git push origin main  # 再度プッシュ
+```
+
 #### ブランチ戦略
 - `main`: 本番環境用
 - `develop`: 開発用
