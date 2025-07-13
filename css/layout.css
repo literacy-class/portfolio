@@ -303,10 +303,10 @@
 .section__title::after {
     content: '';
     position: absolute;
-    bottom: -8px;
+    bottom: -10px;
     left: 50%;
     transform: translateX(-50%);
-    width: 60px;
+    width: 50px;
     height: 4px;
     background: linear-gradient(135deg, var(--first-color), var(--first-color-alt));
     border-radius: 2px;
@@ -315,10 +315,15 @@
 .section__subtitle {
     display: block;
     text-align: center;
+    position: relative;
+    transform: translateX(-50%);
+    left: 50%;
     font-size: 1.1rem;
     color: var(--text-color);
     margin-bottom: 3rem;
     opacity: 0.8;
+    width: 70%;
+    top: 10px;
 }
 
 /*========== HERO SECTION ==========*/
