@@ -83,25 +83,7 @@ input, textarea {
     margin-right: var(--mb-1-5);
 }
 
-/* スマホサイズでのコンテナ調整 */
-@media screen and (max-width: 480px) {
-    .container {
-        margin-left: 1rem;
-        margin-right: 1rem;
-    }
-    
-    .section {
-        padding: 2rem 0 3rem;
-    }
-    
-    .section__title {
-        font-size: 1.5rem;
-    }
-    
-    .section__subtitle {
-        font-size: 0.8rem;
-    }
-}
+
 
 .grid {
     display: grid;
