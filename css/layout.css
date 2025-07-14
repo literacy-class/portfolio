@@ -1694,3 +1694,31 @@
     background: rgba(0, 0, 0, 0.05);
     color: var(--title-color);
 } 
+
+@media screen and (max-width: 767px) {
+  .contact__container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .contact__content {
+    margin-bottom: 1.5rem;
+  }
+  .contact__map-container {
+    width: 100%;
+    margin: 0 auto;
+    max-width: 100vw;
+    border-radius: 1rem;
+    overflow: hidden;
+  }
+  .contact__map-container iframe {
+    width: 100% !important;
+    min-width: 0;
+    height: 220px !important;
+    border-radius: 1rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .contact__map-container iframe {
+    height: 160px !important;
+  }
+} 
