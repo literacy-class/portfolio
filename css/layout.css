@@ -1722,3 +1722,52 @@
     height: 160px !important;
   }
 } 
+
+/*========== AWARDS SECTION ==========*/
+.awards__container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  margin-bottom: 8rem;
+
+}
+.award__item {
+  background: #fff;
+  border-radius: 1.25rem;
+  box-shadow: 0 2px 12px rgba(79,70,229,0.07);
+  padding: 1.5rem 1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 0;
+}
+.award__year {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--first-color);
+  margin-bottom: 0.5rem;
+}
+.award__title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--title-color);
+}
+.award__desc {
+  font-size: 0.95rem;
+  color: var(--text-color-light);
+}
+@media screen and (max-width: 1024px) {
+  .awards__container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (max-width: 767px) {
+  .awards__container {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+  .award__item {
+    padding: 1.2rem 0.7rem;
+  }
+} 
