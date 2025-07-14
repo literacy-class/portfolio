@@ -202,7 +202,7 @@
                                     <span class="skills__number">70%</span>
                                 </div>
                                 <div class="skills__bar">
-                                    <span class="skills__percentage" style="width: 70%"></span>
+                                    <span class="skills__percentage" data-percentage="70"></span>
                                 </div>
                             </div>
 
@@ -212,7 +212,7 @@
                                     <span class="skills__number">85%</span>
                                 </div>
                                 <div class="skills__bar">
-                                    <span class="skills__percentage" style="width: 85%"></span>
+                                    <span class="skills__percentage" data-percentage="85"></span>
                                 </div>
                             </div>
 
@@ -222,7 +222,7 @@
                                     <span class="skills__number">80%</span>
                                 </div>
                                 <div class="skills__bar">
-                                    <span class="skills__percentage" style="width: 80%"></span>
+                                    <span class="skills__percentage" data-percentage="80"></span>
                                 </div>
                             </div>
 
@@ -232,7 +232,7 @@
                                     <span class="skills__number">75%</span>
                                 </div>
                                 <div class="skills__bar">
-                                    <span class="skills__percentage" style="width: 75%"></span>
+                                    <span class="skills__percentage" data-percentage="75"></span>
                                 </div>
                             </div>
                         </div>
@@ -258,7 +258,7 @@
                                     <span class="skills__number">75%</span>
                                 </div>
                                 <div class="skills__bar">
-                                    <span class="skills__percentage skills__node"></span>
+                                    <span class="skills__percentage skills__node" data-percentage="75"></span>
                                 </div>
                             </div>
 
@@ -268,7 +268,7 @@
                                     <span class="skills__number">70%</span>
                                 </div>
                                 <div class="skills__bar">
-                                    <span class="skills__percentage skills__python"></span>
+                                    <span class="skills__percentage skills__python" data-percentage="70"></span>
                                 </div>
                             </div>
 
@@ -278,7 +278,7 @@
                                     <span class="skills__number">65%</span>
                                 </div>
                                 <div class="skills__bar">
-                                    <span class="skills__percentage skills__mongo"></span>
+                                    <span class="skills__percentage skills__mongo" data-percentage="65"></span>
                                 </div>
                             </div>
 
@@ -288,7 +288,7 @@
                                     <span class="skills__number">70%</span>
                                 </div>
                                 <div class="skills__bar">
-                                    <span class="skills__percentage" style="width: 70%"></span>
+                                    <span class="skills__percentage" data-percentage="70"></span>
                                 </div>
                             </div>
                         </div>
@@ -472,13 +472,12 @@
     <script type="module">
         // スキルアコーディオン機能を直接実装
         document.addEventListener('DOMContentLoaded', function() {
+            // アコーディオン
             const headers = document.querySelectorAll('.skills__header');
-            
             headers.forEach((header, index) => {
                 header.addEventListener('click', function() {
                     const content = this.parentElement;
                     const isOpen = content.classList.contains('skills__open');
-                    
                     if (isOpen) {
                         content.classList.remove('skills__open');
                         content.classList.add('skills__close');
@@ -487,6 +486,18 @@
                         content.classList.add('skills__open');
                     }
                 });
+            });
+
+            // スキルバーアニメーション
+            const skillBars = document.querySelectorAll('.skills__percentage');
+            skillBars.forEach(bar => {
+                bar.style.width = '0%';
+                const targetWidth = bar.getAttribute('style').match(/width:\s*(\d+)%/);
+                const percentage = targetWidth ? parseInt(targetWidth[1]) : 0;
+                setTimeout(() => {
+                    bar.style.transition = 'width 1.2s cubic-bezier(0.4,0,0.2,1)';
+                    bar.style.width = percentage + '%';
+                }, 300);
             });
         });
     </script>
