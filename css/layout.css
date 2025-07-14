@@ -100,7 +100,7 @@
     opacity: 0;
     transition: var(--transition-cubic);
     border-radius: var(--border-radius-lg);
-    z-index: -1;
+    z-index: 0;
 }
 
 .nav__link:hover::before {
@@ -115,6 +115,10 @@
 .nav__icon {
     font-size: 1.2rem;
     margin-bottom: var(--mb-0-25);
+}
+
+.nav__text {
+    display: none;
 }
 
 /* Close menu */
